@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizental Scrool Bar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="gallery-wrap">
+        <img id="back" src="Images/back.png" alt="">
+        <div class="gallery">
+            <div>
+                <span><img src="images/img1.jpg" alt=""></span>
+                <span><img src="images/img2.jpg" alt=""></span>
+                <span><img src="Images/img3.jpg" alt=""></span>
+            </div>
+            <div>
+                <span><img src="images/img4.jpg" alt=""></span>
+                <span><img src="images/img5.jpg" alt=""></span>
+                <span><img src="Images/img6.jpg" alt=""></span>
+            </div>
+        </div>
+        <img id="next" src="images/next.png" alt="">
+    </div>
+ 
+
+<script>
+    let scroolContainer = document.querySelector(".gallery");
+    let backBtn = document.getElementsById("back");
+    let nextBtn = document.getElementsById("next");
+
+    scrollContainer.addEventListener("wheel", (evt) =>{
+    evt.preventDefault();
+    scrollContainer.scrollLeft += evt.deltaY;
+    scrollContainer.style.scrollBehavior = "auto";
+    });
+
+    nextBtn.addEventListener("click", ()=>{
+       scrollContainer.style.scrollBehavior = "smooth";
+       scrollContainer.scrollLeft += 900;
+    });
+
+    backBtn.addEventListener("click", ()=>{
+       scrollContainer.style.scrollBehavior = "smooth";
+       scrollContainer.scrollLeft -= 900;
+    });
+</script>
+
+
+
+</body>
+</html>
